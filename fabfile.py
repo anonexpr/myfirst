@@ -12,9 +12,13 @@ env.roledefs = {
 @roles('servers')
 def remove_tw_conf():
     print("Executing on %s as %s" % (env.host, env.user))
+    conf_dir = '/tmp/flume-id/conf-tw'
+    with settings(warn_only=True):
+         if run("test -d %s" % code_dir).failed:
+            print("%s is missing" % (conf_dir))
     with cd('/tmp/flume-id'):
          run('ls')
-       #run('rm -rf /tmp/flume-id/conf-tw')
+        #run('rm -rf /tmp/flume-id/conf-tw')
     
 
 def host_type():
