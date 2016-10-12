@@ -18,8 +18,8 @@ def remove_tw_conf():
          #if run("test -d /tmp/flume-id/conf-tw").failed:
             abort("%s is missing" % (conf_dir))
          with cd('/tmp/flume-id'):
-              run('ls')
-        #run('rm -rf /tmp/flume-id/conf-tw')
+              #run('ls')
+              run("rm -rf %s" %conf_dir)
     
 
 def host_type():
