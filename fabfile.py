@@ -14,7 +14,7 @@ def remove_tw_conf():
     print("Executing on %s as %s" % (env.host, env.user))
     conf_dir = '/tmp/flume-id/conf-tw'
     with settings(warn_only=True):
-         #if run("test -d %s" % (conf_dir)).failed:
+         if run("test -d %s" % (conf_dir)).failed:
          #if run("test -d /tmp/flume-id/conf-tw").failed:
             abort("%s is missing" % (conf_dir))
          with cd('/tmp/flume-id'):
