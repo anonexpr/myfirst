@@ -11,6 +11,7 @@ env.roledefs = {
 
 @roles('servers')
 def remove_tw_conf():
+    print("Executing on %s as %s" % (env.host, env.user))
     with cd('/tmp/flume-id'):
          run('ls')
        #run('rm -rf /tmp/flume-id/conf-tw')
