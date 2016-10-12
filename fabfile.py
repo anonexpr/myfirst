@@ -16,8 +16,9 @@ def remove_tw_conf():
     with settings(warn_only=True):
          if run("test -d %s" % conf_dir).failed:
             print("%s is missing" % (conf_dir))
-    with cd('/tmp/flume-id'):
-         run('ls')
+         else:
+            with cd('/tmp/flume-id'):
+                 run('ls')
         #run('rm -rf /tmp/flume-id/conf-tw')
     
 
